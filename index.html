@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="Silva Tradez" property="og:title" />
+    <meta content="Just a kid Different Then Other's" property="og:description" />
+    <meta content="https://silvatradez.com/" property="og:url" />
+    <meta content="https://cdn.discordapp.com/attachments/1166707135325945907/1260999218701668372/35f4e2ed903404adb35e608abe891591.png?ex=66915c89&is=66900b09&hm=db5f621c69bc9b4ea5a54f8d0f179983ebbf8b0aa77d1757c2d7484f498fc82c&" property="og:image" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silva Tradez</title>
+    <link rel="icon" href="icon.png">
+    <style>
+        @font-face {
+            font-family: 'AnonymousPro';
+            src: url('AnonymousPro-Regular.ttf') format('truetype');
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .centered-text {
+            font-family: 'AnonymousPro', monospace;
+            color: #fff;
+            font-size: 23px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            margin-top: -200px;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img src="cover.png" alt="Centered Image">
+        <div class="centered-text" id="coming-soon-text">COMING SOON</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var textElement = document.getElementById('coming-soon-text');
+            var dots = '';
+            var dotCount = 0;
+            
+            setInterval(function() {
+                dotCount = (dotCount + 1) % 4; 
+                dots = '.'.repeat(dotCount);
+                textElement.textContent = 'COMING SOON' + dots;
+            }, 500); 
+        });
+    </script>
+</body>
+</html>
